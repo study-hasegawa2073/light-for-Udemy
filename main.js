@@ -33,6 +33,10 @@ ambientLight.intensity = 0.5;
 scene.add(ambientLight);
 gui.add(ambientLight, 'intensity').min(0).max(1).step(0.001);
 
+const directionalLight = new THREE.DirectionalLight(0x0fffff, 0.5);
+directionalLight.position.set(1, 0.55, 3);
+scene.add(directionalLight);
+
 //マテリアル
 const material = new THREE.MeshStandardMaterial();
 material.roughness = 0.3;
