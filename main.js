@@ -40,9 +40,14 @@ const directionalLight = new THREE.DirectionalLight(0x0fffff, 0.5);
 // const hemisphereLight = new THREE.HemisphereLight(0x0ffff0, 0xffff00, 0.3);
 // scene.add(hemisphereLight);
 
-const pointLight = new THREE.PointLight(0x0fffff, 0.5);
-pointLight.position.set(1, 0.55, 3);
-scene.add(pointLight);
+// const pointLight = new THREE.PointLight(0x0fffff, 0.5);
+// pointLight.position.set(1, 0.55, 3);
+// scene.add(pointLight);
+
+const rectAreaLight = new THREE.RectAreaLight(0x0fffff, 1, 1, 1);
+rectAreaLight.position.set(1.5, 0, 1.5);
+rectAreaLight.lookAt(0, 0, 0);
+scene.add(rectAreaLight);
 
 //マテリアル
 const material = new THREE.MeshStandardMaterial();
