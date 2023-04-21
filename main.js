@@ -34,8 +34,11 @@ scene.add(ambientLight);
 gui.add(ambientLight, 'intensity').min(0).max(1).step(0.001);
 
 const directionalLight = new THREE.DirectionalLight(0x0fffff, 0.5);
-directionalLight.position.set(1, 0.55, 3);
-scene.add(directionalLight);
+// directionalLight.position.set(1, 0.55, 3);
+// scene.add(directionalLight);
+
+const hemisphereLight = new THREE.HemisphereLight(0x0ffff0, 0xffff00, 0.3);
+scene.add(hemisphereLight);
 
 //マテリアル
 const material = new THREE.MeshStandardMaterial();
