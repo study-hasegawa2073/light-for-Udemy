@@ -34,15 +34,15 @@ scene.add(ambientLight);
 gui.add(ambientLight, 'intensity').min(0).max(1).step(0.001);
 
 const directionalLight = new THREE.DirectionalLight(0x0fffff, 0.5);
-// directionalLight.position.set(1, 0.55, 3);
-// scene.add(directionalLight);
+directionalLight.position.set(1, 0.55, 3);
+scene.add(directionalLight);
 
-// const hemisphereLight = new THREE.HemisphereLight(0x0ffff0, 0xffff00, 0.3);
-// scene.add(hemisphereLight);
+const hemisphereLight = new THREE.HemisphereLight(0x0ffff0, 0xffff00, 0.3);
+scene.add(hemisphereLight);
 
-// const pointLight = new THREE.PointLight(0x0fffff, 0.5);
-// pointLight.position.set(1, 0.55, 3);
-// scene.add(pointLight);
+const pointLight = new THREE.PointLight(0x0fffff, 0.5);
+pointLight.position.set(1, 0.55, 3);
+scene.add(pointLight);
 
 // const rectAreaLight = new THREE.RectAreaLight(0x0fffff, 1, 1, 1);
 // rectAreaLight.position.set(1.5, 0, 1.5);
@@ -54,13 +54,29 @@ const spotLight = new THREE.SpotLight(
   0.5,
   10,
   Math.PI * 0.15,
-  0.3,
+  0.1,
   1
 );
 spotLight.position.set(0, 2, 3);
 scene.add(spotLight);
 spotLight.target.position.x = 1;
 scene.add(spotLight.target);
+
+// helper
+const directionalLightHelper = new THREE.DirectionalLightHelper(
+  directionalLight,
+  0.2
+);
+scene.add(directionalLightHelper);
+
+const hemisphereLightHelper = new THREE.HemisphereLightHelper(
+  hemisphereLight,
+  0.2
+);
+scene.add(hemisphereLightHelper);
+
+const pointLightHelper = new THREE.PointLightHelper(pointLight, 0.2);
+scene.add(pointLightHelper);
 
 //マテリアル
 const material = new THREE.MeshStandardMaterial();
