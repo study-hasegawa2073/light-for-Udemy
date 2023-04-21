@@ -59,7 +59,7 @@ const spotLight = new THREE.SpotLight(
 );
 spotLight.position.set(0, 2, 3);
 scene.add(spotLight);
-spotLight.target.position.x = 1;
+spotLight.target.position.x = -1;
 scene.add(spotLight.target);
 
 // helper
@@ -77,6 +77,12 @@ scene.add(hemisphereLightHelper);
 
 const pointLightHelper = new THREE.PointLightHelper(pointLight, 0.2);
 scene.add(pointLightHelper);
+
+const spotLightHelper = new THREE.SpotLightHelper(spotLight);
+scene.add(spotLightHelper);
+window.requestAnimationFrame(() => {
+  spotLightHelper.update();
+});
 
 //マテリアル
 const material = new THREE.MeshStandardMaterial();
