@@ -37,8 +37,12 @@ const directionalLight = new THREE.DirectionalLight(0x0fffff, 0.5);
 // directionalLight.position.set(1, 0.55, 3);
 // scene.add(directionalLight);
 
-const hemisphereLight = new THREE.HemisphereLight(0x0ffff0, 0xffff00, 0.3);
-scene.add(hemisphereLight);
+// const hemisphereLight = new THREE.HemisphereLight(0x0ffff0, 0xffff00, 0.3);
+// scene.add(hemisphereLight);
+
+const pointLight = new THREE.PointLight(0x0fffff, 0.5);
+pointLight.position.set(1, 0.55, 3);
+scene.add(pointLight);
 
 //マテリアル
 const material = new THREE.MeshStandardMaterial();
