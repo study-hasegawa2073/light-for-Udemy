@@ -44,10 +44,23 @@ const directionalLight = new THREE.DirectionalLight(0x0fffff, 0.5);
 // pointLight.position.set(1, 0.55, 3);
 // scene.add(pointLight);
 
-const rectAreaLight = new THREE.RectAreaLight(0x0fffff, 1, 1, 1);
-rectAreaLight.position.set(1.5, 0, 1.5);
-rectAreaLight.lookAt(0, 0, 0);
-scene.add(rectAreaLight);
+// const rectAreaLight = new THREE.RectAreaLight(0x0fffff, 1, 1, 1);
+// rectAreaLight.position.set(1.5, 0, 1.5);
+// rectAreaLight.lookAt(0, 0, 0);
+// scene.add(rectAreaLight);
+
+const spotLight = new THREE.SpotLight(
+  0x0fffff,
+  0.5,
+  10,
+  Math.PI * 0.15,
+  0.3,
+  1
+);
+spotLight.position.set(0, 2, 3);
+scene.add(spotLight);
+spotLight.target.position.x = 1;
+scene.add(spotLight.target);
 
 //マテリアル
 const material = new THREE.MeshStandardMaterial();
